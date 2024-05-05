@@ -102,16 +102,22 @@ body {
   gap: 1rem;
 }
 
+#setHead {
+  color: #303030;
+}
+
 #setText {
   font-size: 1rem;
+  color: #303030;
 }
 
 #setTaskText {
   font-size: 1rem;
+  color: #303030;
 }
 
 #taskBar {
-  background: linear-gradient(to left, #F1F1F1 80%, black 20%);
+  background: linear-gradient(to left, #F1F1F1 80%, #1A1A1A 20%);
   width: 5rem;
   height: 0.25rem;
   border-radius: 0.5rem;
@@ -134,12 +140,16 @@ body {
 .cusMain:nth-child(1) {margin-top: 0;} .cusMain:nth-child(5) {margin-bottom: 0;}
 
 .cusMain {
-  background-color: #f2f2f2;
+  background-color: transparent;
   margin: 1rem 0;
   border-radius: 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.cusMain.cusMainAddColor {
+  background-color: #F2F2F2;
 }
 
 .cusMainDiv {
@@ -157,8 +167,17 @@ body {
   font-size: 1rem;
 }
 
+.innerSection {
+  margin-top: 0.75rem;
+  display: none;
+}
+
+.innerSection.openInnerSection {
+  display: block;
+}
+
 .innerText {
-  margin: 0.75rem 0;
+  margin-bottom: 0.75rem;
   font-size: 1rem;
 }
 
@@ -183,6 +202,14 @@ body {
   font-weight: 600;
   color: #323232;
   font-size: 1rem;
+}
+
+.cusImg {
+  display: none;
+}
+
+.cusImg.openCusImg {
+  display: block;
 }
 
 
@@ -304,11 +331,11 @@ body {
   }
 
   #innerBtnDiv {
-    gap: 1.5rem;
+    gap: 0 1.5rem;
   }
 
   .cusImg {
-    display: none;
+    display: none !important;
   }
 
 }
@@ -361,7 +388,7 @@ body {
   }
 
   #dcIconTextMob {
-    display: none;
+    display: none !important;
   }
 
 

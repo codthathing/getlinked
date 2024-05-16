@@ -17,29 +17,83 @@
       <img src="./Icons/shopIconText.svg" id="shopIconText" alt="">
     </div>
 
-    <div class="impDiv" id="impDivMob">
+    <div class="impDiv impFieldDiv" id="impDiv">
       <img src="./Icons/impIcon.svg" class="impIcon" id="impSrchIcon" alt="">
       <input type="text" name="" placeholder="Search" id="impField">
     </div>
 
-    <div class="impDiv" id="impDivDesk">
-      <img src="./Icons/impIcon.svg" class="impIcon" id="impSrchIcon" alt="">
-      <input type="text" name="" placeholder="Search" id="impField">
-    </div>
-
-    <img src="./Icons/dcIconText.svg" id="notIcon" alt="">
-
-    <aside id="notDcAside">
-      <div id="dcDiv">
-        <div class="impDiv dcIconText" id="dcIconTextMob">
+    <aside id="notDcAside" class="centerElement">
+      <div id="notificationDiv" class="centerElement">
+        <img src="./Icons/dcIconText.svg" id="notIcon" alt="">
+        <aside id="alertAside" class="sideMenus">
+          <nav id="alertNav">
+            <h1 id="alertHead" class="listName">Alerts</h1>
+            <div id="alertInnerDiv">
+              <img src="./Icons/levelIcon.svg" alt="">
+              <img src="./Icons/timeIcon.svg" alt="">
+            </div>
+          </nav>
+          <main id="alertMain">
+            <h1 id="alertMainText" class="listName">Alerts about your store and account will show here</h1>
+          </main>
+        </aside>
+      </div>
+      <div id="dcDiv" class="centerElement">
+        <div class="impDiv" id="dcIconText">
           <img src="./Icons/dcIconText.svg" class="impIcon" id="dcSvgIcon" alt="">
           <span id="dcText">Davii collections</span>
         </div>
-        <div class="impDiv dcIconText" id="dcIconTextDesk">
-          <img src="./Icons/dcIconText.svg" class="impIcon" id="dcSvgIcon" alt="">
-          <span id="dcText">Davii collections</span>
+        <div class="centerElement">
+          <i id="dcIcon" class="dcIconStyle">DC</i>
+          <aside id="personalDetails" class="sideMenus">
+            <ul id="collectorDiv" class="collectorDivs">
+              <li id="collectorName" class="listItems">
+                <div class="listItemFlex">
+                  <i class="dcIconStyle">DC</i>
+                  <h1 id="mainName" class="listName">Davii collections</h1>
+                </div>
+                <img src="./Icons/checkIcon.svg" id="checkMarkIcon" class="listIcons" alt="check mark">
+              </li>
+              <li id="storeItem" class="listItems">
+                <div id="storeItemDiv" class="listItemFlex">
+                  <img src="./Icons/storeIcon.svg" alt="" id="storeIcon" class="listIcons">
+                  <p id="storeName" class="listName">All stores</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul id="serviceDiv" class="collectorDivs">
+              <li class="listItems">
+                <p class="listName">Help Center</p>
+              </li>
+              <li class="listItems">
+                <p class="listName">Changelog</p>
+              </li>
+              <li class="listItems">
+                <p class="listName">Community forums</p>
+              </li>
+              <li class="listItems">
+                <p class="listName">Hire a Shopify Partner</p>
+              </li>
+              <li class="listItems">
+                <p class="listName">Keyboard shortcuts</p>
+              </li>
+            </ul>
+
+            <ul id="accountDiv" class="collectorDivs">
+              <li class="listItems">
+                <h1 class="listName">David Micheal</h1>
+                <p class="listName" id="accountMail">davidmicheal@gmail.com</p>
+              </li>
+              <li class="listItems">
+                <p class="listName">Manage account</p>
+              </li>
+              <li class="listItems">
+                <p class="listName">Log out</p>
+              </li>
+            </ul>
+          </aside>
         </div>
-        <i id="dcIcon">DC</i>
       </div>
     </aside>
 
@@ -71,7 +125,7 @@
       </div>
 
       <section id="cusSec"></section>
-      
+
     </section>
   </main>
 

@@ -74,7 +74,7 @@ const callToggleButton = [
 ]
 
 for (let i = 0; i < callToggleButton.length; i++) {
-    clickToggleButton(callToggleButton[i].btnId, callToggleButton[i].taskShown, callToggleButton[i].divToggled, callToggleButton[i].styleToggled, callToggleButton[i].styleDcDisplayBackground, callToggleButton[i].taskIconOne, callToggleButton[i].taskIconTwo, callToggleButton[i].styleDcBackground)
+    clickToggleButton(callToggleButton[i].btnId, callToggleButton[i].compareId, callToggleButton[i].taskShown, callToggleButton[i].divToggled, callToggleButton[i].styleToggled, callToggleButton[i].styleDcDisplayBackground, callToggleButton[i].taskIconOne, callToggleButton[i].taskIconTwo, callToggleButton[i].styleDcBackground)
 }
 
 

@@ -47,43 +47,37 @@ mainDetails.map(({ innerHeadText, innerSecText, innerBtnDivId, innerBtnText, inn
 
 // The function adds different styling to the front page when the toggle arrow is clicked and it changes 
 // the toggle arrow source link after every click
-function togglePage(impDivWidth, dcDisplay, taskIcon) {
+function togglePage(dcDisplay,taskIcon) {
     showTask.src = taskIcon;
-    document.getElementById("impDiv").classList.toggle(impDivWidth);
     document.getElementById("dcIconText").classList.toggle(dcDisplay);
 };
 
-function clickToggleButton(btnId, taskShown, divToggled, styleToggled, styleDcDisplayBackground, taskIconOne = "./Icons/showTaskDown.jpg", taskIconTwo = "./Icons/showTaskDown.jpg") {
+const clickToggleButton = (btnId, taskShown, divToggled, styleToggled, styleDcDisplay, taskIconOne = "./Icons/showTaskDown.jpg", taskIconTwo = "./Icons/showTaskDown.jpg") => {
     document.getElementById(btnId).addEventListener("click", () => {
         if (taskShown) {
             taskShown = false;
-            togglePage("impDivWidth", styleDcDisplayBackground, taskIconOne);
+            togglePage(styleDcDisplay, taskIconOne);
             divToggled.classList.remove(styleToggled);
         } else {
             taskShown = true;
-            togglePage("impDivWidth", styleDcDisplayBackground, taskIconTwo);
+            togglePage(styleDcDisplay, taskIconTwo);
             divToggled.classList.add(styleToggled);
         }
     })
 }
 
 const callToggleButton = [
-    { id: 0, btnId: "showTaskDiv", taskShown: checkTask, divToggled: cusSec, styleToggled: "toggleCusSec", styleDcDisplayBackground: "styleDcIconTextDisplay", taskIconOne: "./Icons/showTaskDown.jpg", taskIconTwo: "./Icons/showTaskUp.jpg" },
-    { id: 0, btnId: "dcIcon", taskShown: checkCollector, divToggled: personalDetails, styleToggled: "toggleDetails", styleDcDisplayBackground: "styleDcIconTextBackground" },
-    { id: 0, btnId: "notIcon", taskShown: checkAlert, divToggled: alertAside, styleToggled: "toggleAlertAside", styleDcDisplayBackground: "styleDcIconTextDisplay" }
+    { id: 0, btnId: "showTaskDiv", taskShown: checkTask, divToggled: cusSec, styleToggled: "toggleCusSec", styleDcDisplay: "styleDcDisplay", taskIconOne: "./Icons/showTaskDown.jpg", taskIconTwo: "./Icons/showTaskUp.jpg" },
+    { id: 1, btnId: "dcDiv", taskShown: checkCollector, divToggled: personalDetails, styleToggled: "toggleDetails", styleDcDisplay: "styleDcDisplay" },
+    { id: 2, btnId: "notIcon", taskShown: checkAlert, divToggled: alertAside, styleToggled: "toggleAlertAside", styleDcDisplay: "styleDcDisplay" }
 ]
 
 for (let i = 0; i < callToggleButton.length; i++) {
-    clickToggleButton(callToggleButton[i].btnId, callToggleButton[i].compareId, callToggleButton[i].taskShown, callToggleButton[i].divToggled, callToggleButton[i].styleToggled, callToggleButton[i].styleDcDisplayBackground, callToggleButton[i].taskIconOne, callToggleButton[i].taskIconTwo, callToggleButton[i].styleDcBackground)
+    clickToggleButton(callToggleButton[i].btnId, callToggleButton[i].taskShown, callToggleButton[i].divToggled, callToggleButton[i].styleToggled, callToggleButton[i].styleDcDisplay, callToggleButton[i].taskIconOne, callToggleButton[i].taskIconTwo)
 }
 
 
-
-// clickToggleButton("showTaskDiv", checkTask, cusSec, "toggleCusSec", "./Icons/showTaskDown.jpg", "./Icons/showTaskUp.jpg");
-// clickToggleButton("dcIcon", checkCollector, personalDetails, "toggleDetails");
-// clickToggleButton("notIcon", checkAlert, alertAside, "toggleAlertAside");
-
-// This functionality is used to display and hide some text
+// This functionality is used to display and hide some text in the setup guide section
 let innerHead = document.getElementsByClassName("innerHead");
 let innerSection = document.getElementsByClassName("innerSection");
 let cusImg = document.getElementsByClassName("cusImg");
@@ -107,9 +101,20 @@ for (let i = 0; i < innerHead.length; i++) {
     });
 };
 
+
+
+// This is used to add blue border to text and icons in personal profile and alert section respectively when focused on
+const addBlueBorder = (items) => {
+    for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", () => {
+            togTextImg(items, "focusedListItem", i)
+        });
+    };
+}
 let listItem = document.getElementsByClassName("listItems");
-for (let i = 0; i < listItem.length; i++) {
-    listItem[i].addEventListener("click", () => {
-        togTextImg(listItem, "focusedListItem", i)
-    });
+let alertIcons = document.getElementsByClassName("alertInnerIcon");
+const itemsAction = [listItem, alertIcons];
+
+for (let i = 0; i < itemsAction.length; i++) {
+    addBlueBorder(itemsAction[i]);
 };

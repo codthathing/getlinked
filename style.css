@@ -1,27 +1,24 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0 1rem;
-  background-color: black;
-  color: white;
+  outline: none;
 }
 
 body {
   background-color: #F1F1F1;
 }
 
+#header {
+  display: flex;
+  align-items: center;
+  background-color: black;
+}
+
 .impDiv {
   background-color: #303030;
   display: flex;
   align-items: center;
-  gap: 0 0.75rem;
   border: 0.25px solid #616161;
 }
 
@@ -35,75 +32,56 @@ body {
 
 #impField {
   color: #B5B5B5;
-  background-color: #303030;
+  background-color: inherit;
   border: none;
-  outline: none;
   width: 100%;
-  font-size: 1rem;
 }
 
 #impDiv:hover {
   border: 0.5px solid #E1E1E1;
 }
 
-#impDiv:active {
-  border: 2px solid #B5B5B5;
-}
-
-#impDiv #impField:focus {
-  outline: none;
-}
-
-#impDiv #impField:focus + #impDiv {
-  border: 2px solid white;
-}
-
-.centerElement {
+#notDcAside {
   display: flex;
   align-items: center;
 }
 
 #notIcon {
   color: #E3E3E3;
+  cursor: pointer;
 }
 
-#notIcon:hover {
+#notIconDiv:hover {
   background-color: #616161;
 }
 
-#notIcon:active {
+#notIconDiv:active {
   background-color: #656266;
+}
+
+#dcDiv:hover {
+  background-color: #616161;
 }
 
 #dcIconText {
   border: none;
   align-items: center;
+  background-color: inherit;
 }
 
-#dcIconText:hover {
-  background-color: #616161;
-}
-
-#dcIconText.styleDcIconTextDisplay {
-  display: none;
-}
-
-#dcIconText.styleDcIconTextBackground {
-  background-color: #616161;
+#dcIconText.styleDcDisplay {
   display: none;
 }
 
 #dcText {
   color: #E3E3E3;
-  font-size: 1rem;
+  text-wrap: nowrap;
 }
 
 .dcIconStyle {
   color: rgba(0, 0, 0, 0.4);
   background: #36FBA1;
   font-family: 'Inter';
-  font-size: 1rem;
-  border-radius: 0.5rem;
   font-style: normal;
 }
 
@@ -113,15 +91,18 @@ body {
 }
 
 #extMainText {
-  font-size: 1rem;
   color: #E3E3E3;
 }
 
 #extMainBtn {
-  font-size: 1rem;
   border: none;
   background-color: #FFFFFF;
   color: #323232;
+  cursor: pointer;
+}
+
+#extCanIcon {
+  cursor: pointer;
 }
 
 #setSec {
@@ -136,20 +117,9 @@ body {
 #setTaskCom {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
-#setHead {
-  color: #303030;
-}
-
-#setText {
-  font-size: 1rem;
-  color: #303030;
-}
-
-#setTaskText {
-  font-size: 1rem;
+.setTexts {
   color: #303030;
 }
 
@@ -157,28 +127,32 @@ body {
   background: linear-gradient(to left, #F1F1F1 80%, #1A1A1A 20%);
   width: 5rem;
   height: 0.25rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 }
 
 #showTask {
   height: fit-content;
+  cursor: pointer;
 }
 
 #cusSec {
   display: none;
-  opacity: 0;
 }
 
 #cusSec.toggleCusSec {
   display: block;
-  opacity: 1;
 }
 
-.cusMain:nth-child(1) {margin-top: 0;} .cusMain:nth-child(5) {margin-bottom: 0;}
+.cusMain:nth-child(1) {
+  margin-top: 0;
+}
+
+.cusMain:nth-child(5) {
+  margin-bottom: 0;
+}
 
 .cusMain {
   background-color: transparent;
-  margin: 1rem 0;
   border-radius: 0.75rem;
   display: flex;
   justify-content: space-between;
@@ -192,20 +166,19 @@ body {
 .cusMainDiv {
   display: grid;
   grid-template-columns: 2.5% 92.5%;
+  align-items: flex-start;
 }
 
 .cusIcon {
-  align-items: flex-start;
+  cursor: pointer;
 }
 
 .innerHead {
   font-weight: 600;
-  margin-top: 0.5rem;
-  font-size: 1rem;
+  cursor: pointer;
 }
 
 .innerSection {
-  margin-top: 0.75rem;
   display: none;
 }
 
@@ -213,21 +186,9 @@ body {
   display: block;
 }
 
-.innerText {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
 .innerSpan {
   color: #005BD3;
-}
-
-.innerBtn {
-  border: hidden;
-  background-color: #404040;
-  color: #F6F3F6;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  cursor: pointer;
 }
 
 #innerBtnDiv {
@@ -235,10 +196,16 @@ body {
   align-items: center;
 }
 
+.innerBtn {
+  border: hidden;
+  background-color: #404040;
+  color: #F6F3F6;
+}
+
 #innerDivSpan {
   font-weight: 600;
   color: #323232;
-  font-size: 1rem;
+  cursor: pointer;
 }
 
 .cusImg {
@@ -256,7 +223,6 @@ body {
 .sideMenus {
   position: absolute;
   background-color: white;
-  border-radius: 1rem;
 }
 
 #personalDetails.toggleDetails {
@@ -264,8 +230,9 @@ body {
 }
 
 .collectorDivs {
-  padding: 0.5rem;  
   border-bottom: 0.5px solid #E1E1E1;
+  display: flex;
+  flex-direction: column;
 }
 
 .collectorDivs:last-child {
@@ -277,22 +244,15 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: #F1F1F1;
-  border-radius: 0.5rem;
-  padding: 0.35rem 0.5rem;
 }
 
-[class~="listItemFlex"] {
+.listItemFlex {
   display: flex;
   align-items: center;
-  gap: 0 0.5rem;
 }
 
 .listItems {
   list-style: none;
-  display: block;
-  padding: 0.35rem 0.5rem;
-  margin-top: 0.4rem;
-  border-radius: 0.5rem;
 }
 
 .listItems:hover {
@@ -314,20 +274,9 @@ body {
 
 .listName {
   color: #303030;
-  font-size: 1rem;
-}
-
-#storeItemDiv {
-  gap: 0 0.75rem;
-}
-
-#accountMail {
-  margin: 0.05rem 0 0 0.15rem;
-  font-size: 0.75rem;
 }
 
 #alertAside {
-  padding: 1rem;
   display: none;
 }
 
@@ -343,104 +292,134 @@ body {
 
 #alertInnerDiv {
   display: flex;
-  gap: 0 1.5rem;
+}
+
+.alertInnerIcon {
+  cursor: pointer;
+}
+
+.alertInnerIcon.focusedListItem {
+  background: transparent;
+  border: 1px solid #005BD3;
 }
 
 #alertMain {
-  padding: 1rem;
   text-align: center;
   background-color: #F1F1F1;
-  margin-top: 1.5rem;
 }
+
+
+
 
 
 @media all and (max-width: 767px) {
 
-  #shopIcon {
-    height: 2.5rem;
-    width: 2.5rem;
+  #header {
+    gap: 0 0.5rem;
+    padding: 0.5rem;
   }
-  
+
+  #shopIcon {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+
   #shopIconText {
     display: none;
   }
 
-  #header {
-    padding: 0.5rem 1rem;
-  }
-
   .impDiv {
-    padding: 0.35rem 0.75rem;
-    border-radius: 0.5rem;
+    padding: 0.25rem 0.35rem;
+    border-radius: 0.25rem;
+    gap: 0 0.5rem;
   }
 
   .impIcon {
-    height: 1.25rem;
-    width: 1.25rem;
+    height: 0.75rem;
+    width: 0.75rem;
   }
 
   #impDiv {
-    width: 34.5%;
+    width: 100%;
   }
 
-  #impDiv.impDivWidth {
-    width: 67%;
+  #impField {
+    font-size: 0.5rem;
   }
 
   #notDcAside {
-    gap: 0 0.75rem;
+    gap: 0 0.5rem;
   }
 
-  #notIcon {
-    width: 1.25rem; 
-    height: 1.25rem;
+  #notIconDiv {
+    border-radius: 0.25rem;
+    padding: 0.10rem 0.20rem;
   }
-  
+
+  #dcDiv {
+    padding: 0.05rem;
+  }
+
   #dcIconText {
     display: flex;
-    background-color: #322F33 !important;
+    gap: 0.25rem;
+  }
+
+  #dcText {
+    font-size: 0.5rem;
   }
 
   .dcIconStyle {
-    padding: 0.35rem;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
   }
 
   #extDiv {
     justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1rem 1rem;
-    margin-top: 1.5rem;
+    padding: 0.75rem;
+    margin-top: 1rem;
   }
 
   #extMainText {
     margin-bottom: 1rem;
+    font-size: 0.75rem;
   }
-  
+
   #extMainBtn {
     padding: 0.35rem 0.5rem;
     border-radius: 0.25rem;
+    font-size: 0.75rem;
   }
-  
+
   #extCanIcon {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 0.75rem;
+    width: 0.75rem;
   }
-  
+
   #setSec {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
   }
 
   #setSecDiv {
-    gap: 1.5rem;
     padding: 1rem 1rem 1.5rem 1rem;
   }
 
-  #setHead {
-    font-size: 1rem;
+  .setTexts {
+    font-size: 0.75rem;
   }
-  
+
   #setText {
     margin: 0.5rem 0 0.75rem 0;
+  }
+
+  #setTaskCom {
+    gap: 0 1rem;
+  }
+
+  #showTask {
+    height: 0.25rem;
+    width: 0.5rem;
   }
 
   #cusSec {
@@ -449,36 +428,84 @@ body {
 
   .cusMain {
     padding: 0.5rem;
+    margin: 1rem 0;
   }
 
   .cusMainDiv {
-    gap: 0 2rem;
+    gap: 0 1.5rem;
   }
 
   .cusIcon {
-    height: 2rem;
-    width: 2rem;
+    height: 1rem;
+    width: 1rem;
   }
-  
-  .innerBtn {
-    padding: 0.5rem;
+
+  .innerHead {
+    font-size: 0.75rem;
+  }
+
+  .innerSection {
+    margin-top: 0.75rem;
+  }
+
+  .innerText {
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
   }
 
   #innerBtnDiv {
-    gap: 0 1.5rem;
+    gap: 0 1rem;
+  }
+
+  .innerBtn {
+    padding: 0.25rem 0.30rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+  }
+
+  #innerDivSpan {
+    font-size: 0.75rem;
   }
 
   .cusImg {
     display: none !important;
   }
 
+  .sideMenus {
+    border-radius: 0.25rem;
+    top: 4.75rem;
+  }
+
   #personalDetails {
-    width: 75%;
+    width: 60%;
     right: 1rem;
   }
 
-  .sideMenus {
-    top: 4.75rem;
+  .collectorDivs {
+    padding: 0.5rem;
+    gap: 0.35rem 0;
+  }
+
+  #collectorName {
+    padding: 0.35rem 0.5rem;
+  }
+
+  .listItemFlex {
+    gap: 0 0.25rem;
+  }
+
+  .listItems {
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .listName {
+    font-size: 0.75rem;
+  }
+
+  #accountMail {
+    margin: 0.05rem 0 0 0.15rem;
+    font-size: 0.5rem;
   }
 
   #alertAside {
@@ -486,6 +513,23 @@ body {
     right: 0;
     width: 92.5%;
     margin: auto;
+    padding: 1rem;
+  }
+
+  #alertInnerDiv {
+    gap: 0 1.5rem;
+  }
+
+  .alertInnerIcon {
+    padding: 0.15rem;
+    border-radius: 0.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  #alertMain {
+    padding: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -498,7 +542,7 @@ body {
   #shopIcon {
     display: none;
   }
-  
+
   #shopIconText {
     height: 2.5rem;
     width: 7.5rem;
@@ -506,6 +550,7 @@ body {
 
   #header {
     padding: 0.5rem 1rem;
+    justify-content: space-between;
   }
 
   .impDiv {
@@ -527,7 +572,7 @@ body {
   }
 
   #notIcon {
-    width: 2.25rem; 
+    width: 2.25rem;
     height: 2.25rem;
     background-color: #322F33;
     padding: 0.35rem;
@@ -542,13 +587,13 @@ body {
 
   #dcSvgIcon {
     display: none;
-  } 
+  }
 
   #dcText {
     padding: 0.45rem;
     border-radius: 0.5rem;
   }
-  
+
   .dcIconStyle {
     padding: 0.45rem;
   }
@@ -570,21 +615,19 @@ body {
     align-items: center;
     width: 100%;
   }
-  
+
   #extMainBtn {
     padding: 0.45rem 0.65rem;
     border-radius: 0.35rem;
   }
-  
+
   #extCanIcon {
     height: 1.75rem;
     width: 1.75rem;
   }
-  
+
   #setSec {
-    margin-top: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1.5rem auto 3rem auto;
     width: 60%;
     border-radius: 0.5rem;
   }
@@ -597,7 +640,7 @@ body {
   #setHead {
     font-size: 1.25rem;
   }
-  
+
   #setText {
     margin: 0.5rem 0 0.75rem 0;
   }
@@ -605,7 +648,7 @@ body {
   #showTaskDiv {
     align-self: flex-start;
   }
-  
+
   .showTasks {
     height: 1rem;
     width: 1rem;
@@ -624,7 +667,7 @@ body {
   }
 
   .cusIcon {
-    height:2.25rem;
+    height: 2.25rem;
     width: 2.25rem;
   }
 
@@ -650,7 +693,7 @@ body {
     width: 20%;
   }
 
-  #alertAside { 
+  #alertAside {
     width: 25%;
   }
 }

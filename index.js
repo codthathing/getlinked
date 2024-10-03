@@ -31,7 +31,7 @@ mainDetails.map(({ innerHeadText, innerSecText, innerBtnDivId, innerBtnText, inn
                         <section class="innerSection">
                             <p class="innerText">${innerSecText}
                                 <span class="innerSpan">Learn more</span>
-                              </p>
+                            </p>
                             <div id=${innerBtnDivId}>
                                 <button class="innerBtn">${innerBtnText}</button>
                                 <span id=${innerDivSpanId}>${innerDivSpanText}</span>
